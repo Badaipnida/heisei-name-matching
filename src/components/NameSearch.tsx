@@ -96,7 +96,7 @@ export default function NameSearch() {
         <p className="mt-2 text-sm text-gray-500 px-1">
           例：名字を省略し、名前だけ入力してください。
           <br />
-          <span className="text-gray-400">（キム・テヒョン → テヒョン、パク・ジミン → ジミン）</span>
+          <span className="text-gray-400">（キム・テヒョン → 태형、パク・ジミン → 지민）</span>
         </p>
         {suggestions.length > 0 && (
           <ul className="absolute z-10 w-full bg-white border rounded-lg mt-1 shadow-lg">
