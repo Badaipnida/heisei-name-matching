@@ -86,12 +86,13 @@ export default function NameSearch() {
   return (
     <div className="w-full max-w-md mx-auto p-4">
       <div className="relative">
+        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xl text-gray-400 pointer-events-none">🔍</span>
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="推しの韓国語の名前を入力してください"
-          className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="w-full pl-10 p-3 border-2 border-gray-200 rounded-xl shadow focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all text-lg bg-white"
         />
         <p className="mt-2 text-sm text-gray-500 px-1">
           例：名字を省略し、名前だけ入力してください。
@@ -99,14 +100,14 @@ export default function NameSearch() {
           <span className="text-gray-400">（キム・テヒョン → 태형、パク・ジミン → 지민）</span>
         </p>
         {suggestions.length > 0 && (
-          <ul className="absolute z-10 w-full bg-white border rounded-lg mt-1 shadow-lg">
+          <ul className="absolute z-10 w-full bg-white border-2 border-blue-100 rounded-xl mt-1 shadow-lg">
             {suggestions.map((name) => (
               <li
                 key={name}
                 onClick={() => handleNameSelect(name)}
-                className="p-3 hover:bg-gray-100 cursor-pointer"
+                className="flex items-center gap-2 p-3 hover:bg-blue-50 cursor-pointer text-lg"
               >
-                {name}
+                <span className="text-blue-400">✨</span> {name}
               </li>
             ))}
           </ul>
@@ -114,33 +115,35 @@ export default function NameSearch() {
       </div>
 
       {matchResult && (
-        <div className={`mt-6 p-4 rounded-lg ${
-          gender === 'male' ? 'bg-blue-50' : 'bg-pink-50'
+        <div className={`mt-6 p-6 rounded-2xl border-2 shadow-xl transition-all ${
+          gender === 'male' ? 'bg-blue-50 border-blue-200' : 'bg-pink-50 border-pink-200'
         }`}>
-          <h3 className="text-lg font-semibold mb-2">平成ネームマッチング</h3>
+          <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <span>🧩</span> 平成ネームマッチング
+          </h3>
           <div className="grid grid-cols-2 gap-4">
-            <div>
+            <div className="bg-white rounded-xl p-4 shadow flex flex-col items-center">
+              <span className="text-2xl mb-1">🇰🇷</span>
               <p className="text-gray-600">2024年の名前</p>
-              <p className="font-bold">{matchResult.koreanName.name}</p>
+              <p className="font-bold text-lg">{matchResult.koreanName.name}</p>
               <p className="text-sm text-gray-500">順位: {matchResult.koreanName.rank}位</p>
               <p className="text-sm text-gray-500">出生数: {matchResult.koreanName.birthCount}人</p>
             </div>
-            <div>
+            <div className="bg-white rounded-xl p-4 shadow flex flex-col items-center">
+              <span className="text-2xl mb-1">🇯🇵</span>
               <p className="text-gray-600">平成元年の名前</p>
-              <p className="font-bold">
+              <p className="font-bold text-lg">
                 {matchResult.japaneseName.name}
-                <span className="font-normal text-gray-600 ml-1">
-                  （{matchResult.japaneseName.kana}）
-                </span>
               </p>
               <p className="text-sm text-gray-500">順位: {matchResult.japaneseName.rank}位</p>
               <p className="text-sm text-gray-500">出生数: {matchResult.japaneseName.birthCount}人</p>
             </div>
           </div>
-          <div className="mt-4 text-sm text-gray-500 bg-white p-3 rounded-lg">
+          <div className="mt-4 text-sm text-gray-700 bg-white p-4 rounded-xl shadow flex items-center gap-2">
+            <span className="text-xl">💡</span>
             <p>
               もし{matchResult.koreanName.name}が平成元年に生まれていたら、
-              {matchResult.japaneseName.name}（{matchResult.japaneseName.kana}）という名前が付けられていたかもしれません。
+              {matchResult.japaneseName.name}という名前が付けられていたかもしれません。
             </p>
           </div>
         </div>
