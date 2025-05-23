@@ -11,10 +11,10 @@ export default function GenderSelector() {
   };
 
   return (
-    <div className="flex justify-center space-x-4 mb-6">
+    <div className="flex justify-center space-x-2 sm:space-x-4 mb-6">
       <button
         onClick={() => handleGenderChange('male')}
-        className={`flex items-center gap-2 px-6 py-2 rounded-xl font-semibold transition-all duration-150 shadow-sm border-2 focus:outline-none focus:ring-2 focus:ring-blue-300 text-lg
+        className={`flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-2 rounded-xl font-semibold transition-all duration-150 shadow-sm border-2 focus:outline-none focus:ring-2 focus:ring-blue-300 text-base sm:text-lg
           ${
             gender === 'male'
               ? 'bg-blue-500 text-white border-blue-500 shadow-lg scale-105'
@@ -23,11 +23,11 @@ export default function GenderSelector() {
         `}
         aria-pressed={gender === 'male'}
       >
-        <span className="text-2xl">👦</span> 男性アイドル
+        <span className="text-xl sm:text-2xl">👦</span> 男性アイドル
       </button>
       <button
         onClick={() => handleGenderChange('female')}
-        className={`flex items-center gap-2 px-6 py-2 rounded-xl font-semibold transition-all duration-150 shadow-sm border-2 focus:outline-none focus:ring-2 focus:ring-pink-300 text-lg
+        className={`flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-2 rounded-xl font-semibold transition-all duration-150 shadow-sm border-2 focus:outline-none focus:ring-2 focus:ring-pink-300 text-base sm:text-lg
           ${
             gender === 'female'
               ? 'bg-pink-500 text-white border-pink-500 shadow-lg scale-105'
@@ -36,7 +36,7 @@ export default function GenderSelector() {
         `}
         aria-pressed={gender === 'female'}
       >
-        <span className="text-2xl">👧</span> 女性アイドル
+        <span className="text-xl sm:text-2xl">👧</span> 女性アイドル
       </button>
     </div>
   );

@@ -33,15 +33,24 @@ export async function GET() {
 
 async function readNameData(filePath: string): Promise<NameData[]> {
   const fileContent = await fs.readFile(filePath, 'utf-8');
-  const records = parse(fileContent, {
+  
+  // Remove any BOM and normalize line endings
+  const normalizedContent = fileContent.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
+  
+  const records = parse(normalizedContent, {
     columns: true,
     skip_empty_lines: true,
+    trim: true,
+    delimiter: ',',
+    relax_column_count: false,
+    skip_records_with_error: false,
+    from_line: 1
   });
 
   return records.map((record: any) => ({
     rank: parseInt(record.Rank),
     name: record.Name,
-    birthCount: parseInt(record.Birth_Count.replace(',', '')),
-    ...(record.Kana && { kana: record.Kana }), // Kana 필드가 있는 경우에만 포함
+    birthCount: parseInt(record.Birth_Count.replace(/,/g, '')),
+    ...(record.Kana && { kana: record.Kana.trim() })
   }));
 } 
