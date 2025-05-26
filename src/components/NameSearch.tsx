@@ -139,8 +139,8 @@ export default function NameSearch() {
               <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                 <span className="text-xl">📊</span> 이름 순위 정보
               </h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
                   <p className="text-sm text-gray-600">한국 순위</p>
                   <p className="font-bold text-lg">{matchResult.koreanName.rank}위</p>
                   <p className="text-xs text-gray-500">출생수: {matchResult.koreanName.birthCount}명</p>

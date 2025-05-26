@@ -16,7 +16,7 @@ export default function GenderSelector() {
         onClick={() => handleGenderChange('male')}
         className={`flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-2 rounded-xl font-semibold transition-all duration-150 shadow-sm border-2 focus:outline-none focus:ring-2 focus:ring-blue-300 text-base sm:text-lg
           ${
-            gender === 'male'
+          gender === 'male'
               ? 'bg-blue-500 text-white border-blue-500 shadow-lg scale-105'
               : 'bg-white text-blue-500 border-blue-200 hover:bg-blue-50'
           }
@@ -29,7 +29,7 @@ export default function GenderSelector() {
         onClick={() => handleGenderChange('female')}
         className={`flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-2 rounded-xl font-semibold transition-all duration-150 shadow-sm border-2 focus:outline-none focus:ring-2 focus:ring-pink-300 text-base sm:text-lg
           ${
-            gender === 'female'
+          gender === 'female'
               ? 'bg-pink-500 text-white border-pink-500 shadow-lg scale-105'
               : 'bg-white text-pink-500 border-pink-200 hover:bg-pink-50'
           }

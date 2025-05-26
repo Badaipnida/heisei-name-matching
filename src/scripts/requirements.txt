@@ -1,0 +1,6 @@
+requests==2.31.0
+beautifulsoup4==4.12.3
+playwright==1.42.0
+fake-useragent==1.4.0
+selenium==4.18.1
+webdriver-manager==4.0.1 
