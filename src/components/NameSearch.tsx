@@ -134,15 +134,16 @@ export default function NameSearch() {
           
           <div className="text-center mb-8">
             <p className="text-lg sm:text-xl text-gray-700">
-              <span className="font-bold text-gray-900">{matchResult.koreanName.name}</span> 이름을 가진 당신은
+              <span className="font-bold text-gray-900">{matchResult.koreanName.name}</span> という名前のあなたは
             </p>
             <p className="text-lg sm:text-xl text-gray-700 mt-2">
-              일본에서 <span className="font-bold text-gray-900">{matchResult.japaneseName.name}</span> 입니다.
+              日本では <span className="font-bold text-gray-900">{matchResult.japaneseName.name}</span> です。
             </p>
             {matchResult.koreanName.isRandomMatch && (
               <p className="text-base sm:text-lg text-gray-600 mt-4 bg-yellow-50 p-4 rounded-xl border border-yellow-200">
-                해당 이름이 한국 2025년 신생아 이름 등록 데이터에는 없어 아쉽게도 1:1로 매칭되는 일본어 이름이 없어요. 
-                아쉬울 수 있지만, 저희가 임의의 일본어 이름으로 랜덤 매칭해 드릴게요...!
+                申し訳ありませんが、この名前は韓国2025年の新生児名登録データにありませんでした。
+                残念ながら1対1でマッチする日本語の名前がありません。
+                代わりに、ランダムな日本語の名前でマッチングさせていただきます...！
               </p>
             )}
             <p className="text-base sm:text-lg text-gray-600 mt-4 bg-white/50 p-4 rounded-xl">
@@ -153,39 +154,39 @@ export default function NameSearch() {
           <div className="space-y-6">
             <div className="bg-white rounded-xl p-4 shadow-md">
               <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                <span className="text-xl">📊</span> 이름 순위 정보
+                <span className="text-xl">📊</span> 名前のランキング情報
               </h4>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-                  <p className="text-sm text-gray-600">한국 순위</p>
-                  <p className="font-bold text-lg">{matchResult.koreanName.rank}위</p>
-                  <p className="text-xs text-gray-500">출생수: {matchResult.koreanName.birthCount}명</p>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p className="text-sm text-gray-600">韓国ランキング</p>
+                  <p className="font-bold text-lg">{matchResult.koreanName.rank}位</p>
+                  <p className="text-xs text-gray-500">出生数: {matchResult.koreanName.birthCount}人</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">일본 순위</p>
+                  <p className="text-sm text-gray-600">日本ランキング</p>
                   <div className="flex items-center gap-2">
-                    <p className="font-bold text-lg">{matchResult.japaneseName.rank}위</p>
+                    <p className="font-bold text-lg">{matchResult.japaneseName.rank}位</p>
                     <span className="text-2xl">{getRankEmoji(matchResult.japaneseName.rank, gender)}</span>
                   </div>
-                  <p className="text-xs text-gray-500">출생수: {matchResult.japaneseName.birthCount}명</p>
+                  <p className="text-xs text-gray-500">出生数: {matchResult.japaneseName.birthCount}人</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-xl p-4 shadow-md">
               <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                <span className="text-xl">🎌</span> 일본식 읽기
+                <span className="text-xl">🎌</span> 日本語の読み方
               </h4>
               <p className="text-lg font-medium text-gray-800">{matchResult.japaneseName.kana}</p>
               <p className="text-sm text-gray-600 mt-1">
-                {matchResult.japaneseName.name}의 일본어 발음입니다.
+                {matchResult.japaneseName.name}の日本語の発音です。
               </p>
             </div>
 
             {matchResult.etymology && (
               <div className="bg-white rounded-xl p-4 shadow-md">
                 <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                  <span className="text-xl">📚</span> 이름의 의미
+                  <span className="text-xl">📚</span> 名前の意味
                 </h4>
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-3">
@@ -215,13 +216,13 @@ export default function NameSearch() {
 
             <div className="bg-white rounded-xl p-4 shadow-md">
               <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                <span className="text-xl">💡</span> 재미있는 사실
+                <span className="text-xl">💡</span> おもしろい事実
               </h4>
               <p className="text-sm text-gray-700 leading-relaxed">
-                {matchResult.koreanName.name}님의 이름은 1989년 일본에서 
-                <span className="font-medium"> {matchResult.japaneseName.birthCount}명</span>의 아이들이 
-                <span className="font-medium"> {matchResult.japaneseName.name}</span>이라는 이름으로 태어났을 때의 
-                인기와 비슷한 수준이에요!
+                {matchResult.koreanName.name}さんの名前は1989年の日本で
+                <span className="font-medium"> {matchResult.japaneseName.birthCount}人</span>の子供たちが
+                <span className="font-medium"> {matchResult.japaneseName.name}</span>という名前で生まれたときの
+                人気と同様のレベルです！
               </p>
             </div>
           </div>
@@ -231,7 +232,7 @@ export default function NameSearch() {
               onClick={() => setMatchResult(null)}
               className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
             >
-              다른 이름 검색하기 🔍
+              別の名前を検索する 🔍
             </button>
           </div>
         </div>
