@@ -178,9 +178,12 @@ export default function NameSearch() {
                 <span className="text-xl">🎌</span> 日本語の読み方
               </h4>
               <p className="text-lg font-medium text-gray-800">{matchResult.japaneseName.kana}</p>
-              <p className="text-sm text-gray-600 mt-1">
-                {matchResult.japaneseName.name}の日本語の発音です。
-              </p>
+              <div className="mb-4">
+                <h3 className="text-lg font-semibold mb-2">日本語の読み方</h3>
+                <p className="text-gray-700">
+                  {matchResult.japaneseName.name}の日本語の発音です。(名前は様々な読み方や発音の可能性があります。)
+                </p>
+              </div>
             </div>
 
             {matchResult.etymology && (
