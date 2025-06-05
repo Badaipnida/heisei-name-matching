@@ -53,16 +53,16 @@ export function getRankComment(rank: number): string {
 
 // 기본적인 한자 정보 데이터
 const KANJI_INFO: { [key: string]: KanjiInfo } = {
-  '龍': { kanji: '龍', meaning: '용, 신령스러운 존재', commonUse: '힘과 길상을 상징하는 한자' },
-  '竜': { kanji: '竜', meaning: '용, 신령스러운 존재', commonUse: '龍의 간체자' },
-  '太': { kanji: '太', meaning: '크다, 매우', commonUse: '건강하고 훌륭함을 의미' },
-  '郎': { kanji: '郎', meaning: '남자, 젊은이', commonUse: '남자 이름에 자주 사용' },
-  '翔': { kanji: '翔', meaning: '날다, 비상하다', commonUse: '높이 날아오름을 상징' },
-  '大': { kanji: '大', meaning: '크다, 위대하다', commonUse: '큰 꿈과 포부를 상징' },
-  '輔': { kanji: '輔', meaning: '돕다, 보좌하다', commonUse: '주변을 도우며 살아가는 사람을 의미' },
-  '介': { kanji: '介', meaning: '사이, 개입하다', commonUse: '중재자, 조화로운 사람을 의미' },
-  '樹': { kanji: '樹', meaning: '나무, 세우다', commonUse: '굳건하게 자라나는 나무처럼 성장하기를 바라는 의미' },
-  // 필요한 한자 정보 추가
+  '龍': { kanji: '龍', meaning: '竜、神聖な存在', commonUse: '力と吉祥を象徴する漢字' },
+  '竜': { kanji: '竜', meaning: '竜、神聖な存在', commonUse: '龍の簡体字' },
+  '太': { kanji: '太', meaning: '大きい、非常に', commonUse: '健康で立派であることを意味' },
+  '郎': { kanji: '郎', meaning: '男性、若者', commonUse: '男性の名前に頻繁に使用' },
+  '翔': { kanji: '翔', meaning: '飛ぶ、飛翔する', commonUse: '高く飛び立つことを象徴' },
+  '大': { kanji: '大', meaning: '大きい、偉大', commonUse: '大きな夢と抱負を象徴' },
+  '輔': { kanji: '輔', meaning: '助ける、補佐する', commonUse: '周囲を助けながら生きる人を意味' },
+  '介': { kanji: '介', meaning: '間、介入する', commonUse: '調停者、調和の取れた人を意味' },
+  '樹': { kanji: '樹', meaning: '木、立てる', commonUse: 'しっかりと成長する木のように育つことを願う意味' },
+  // 必要な漢字情報を追加
 };
 
 // 이름 유래 정보 생성
@@ -73,14 +73,14 @@ function getNameEtymology(name: string): NameEtymology | undefined {
 
   const etymology: NameEtymology = {
     nameKanjis,
-    commonUsage: `${name}라는 이름은 ${nameKanjis.map(k => k.meaning).join(', ')}의 의미를 담고 있습니다.`
+    commonUsage: `${name}という名前は${nameKanjis.map(k => k.meaning).join('、')}の意味を持っています。`
   };
 
   // 특별한 이름 패턴에 대한 문화적 설명 추가
   if (name.endsWith('太郎')) {
-    etymology.culturalNote = '〇太郎(たろう)는 일본의 전통적인 작명법으로, 특히 장남에게 자주 사용되었습니다.';
+    etymology.culturalNote = '〇太郎(たろう)は日本の伝統的な命名法で、特に長男によく使用されました。';
   } else if (name.endsWith('輔') || name.endsWith('介')) {
-    etymology.culturalNote = '〇輔/介(すけ)로 끝나는 이름은 주변을 돕고 조화를 이루는 사람이 되기를 바라는 의미를 담고 있습니다.';
+    etymology.culturalNote = '〇輔/介(すけ)で終わる名前は、周囲を助け調和を成す人になることを願う意味を持っています。';
   }
 
   return etymology;
