@@ -58,6 +58,15 @@ export default function NameSearch() {
     setMatchResult(match);
   };
 
+  // Enter 키 입력 시 검색 실행
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && searchTerm.trim()) {
+      const match = findMatchingName(searchTerm.trim(), gender);
+      setMatchResult(match);
+      setSuggestions([]);
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="w-full max-w-md mx-auto p-4 text-center">
@@ -91,6 +100,7 @@ export default function NameSearch() {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyPress={handleKeyPress}
           placeholder="推しの韓国語の名前を入力してください"
           className="w-full pl-10 p-3 border-2 border-gray-200 rounded-xl shadow focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all text-base sm:text-lg bg-white"
         />
@@ -129,6 +139,12 @@ export default function NameSearch() {
             <p className="text-lg sm:text-xl text-gray-700 mt-2">
               일본에서 <span className="font-bold text-gray-900">{matchResult.japaneseName.name}</span> 입니다.
             </p>
+            {matchResult.koreanName.isRandomMatch && (
+              <p className="text-base sm:text-lg text-gray-600 mt-4 bg-yellow-50 p-4 rounded-xl border border-yellow-200">
+                해당 이름이 한국 2025년 신생아 이름 등록 데이터에는 없어 아쉽게도 1:1로 매칭되는 일본어 이름이 없어요. 
+                아쉬울 수 있지만, 저희가 임의의 일본어 이름으로 랜덤 매칭해 드릴게요...!
+              </p>
+            )}
             <p className="text-base sm:text-lg text-gray-600 mt-4 bg-white/50 p-4 rounded-xl">
               {getRankComment(matchResult.japaneseName.rank)}
             </p>

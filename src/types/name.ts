@@ -3,6 +3,7 @@ export interface NameData {
   name: string;
   birthCount: number;
   kana?: string; // Optional for Korean names, required for Japanese names
+  isRandomMatch?: boolean; // Indicates if this is a random match for names beyond rank 1000
 }
 
 export interface KanjiInfo {

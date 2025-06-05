@@ -120,11 +120,34 @@ export function findMatchingName(koreanName: string, gender: Gender): NameMatch 
   }
 
   const koreanNameData = koreanData.find(data => data.name === koreanName);
+  
+  // 데이터베이스에 없는 이름인 경우
   if (!koreanNameData) {
-    return null;
+    // 1-1000위 사이의 랜덤한 순위 선택
+    const randomRank = Math.floor(Math.random() * 1000) + 1;
+    const japaneseNameData = japaneseData.find(data => data.rank === randomRank);
+    
+    if (!japaneseNameData) {
+      return null;
+    }
+
+    // 이름 유래 정보 추가
+    const etymology = getNameEtymology(japaneseNameData.name);
+
+    return {
+      koreanName: {
+        name: koreanName,
+        rank: 0,
+        birthCount: 0,
+        isRandomMatch: true
+      },
+      japaneseName: japaneseNameData as NameData & { kana: string },
+      gender,
+      etymology,
+    };
   }
 
-  // 순위 기반 매칭: 같은 순위의 일본 이름 찾기
+  // 기존 로직: 같은 순위의 일본 이름 찾기
   const japaneseNameData = japaneseData.find(data => data.rank === koreanNameData.rank);
   if (!japaneseNameData) {
     return null;
