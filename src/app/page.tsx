@@ -8,6 +8,90 @@ export default function Home() {
   return (
     <GenderProvider>
       <main className="min-h-screen bg-gradient-to-b from-white to-blue-50">
+        {/* TikTok 라이브 팔로워 카운터 섹션 */}
+        <div className="w-full mb-8">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+              
+              {/* 일본 */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <span className="text-2xl">🇯🇵</span> [일본]
+                </h3>
+                <iframe 
+                  height="80px" 
+                  width="300px" 
+                  frameBorder="0" 
+                  src="https://livecounts.io/embed/tiktok-live-follower-counter/kitto.today" 
+                  style={{border: 0, width: '300px', height: '80px'}}
+                  title="TikTok Live Follower Counter - Japan"
+                />
+              </div>
+
+              {/* 태국 */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <span className="text-2xl">🇹🇭</span> [태국]
+                </h3>
+                <iframe 
+                  height="80px" 
+                  width="300px" 
+                  frameBorder="0" 
+                  src="https://livecounts.io/embed/tiktok-live-follower-counter/kitto.today.th" 
+                  style={{border: 0, width: '300px', height: '80px'}}
+                  title="TikTok Live Follower Counter - Thailand"
+                />
+              </div>
+
+              {/* 대만 */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <span className="text-2xl">🇹🇼</span> [대만]
+                </h3>
+                <iframe 
+                  height="80px" 
+                  width="300px" 
+                  frameBorder="0" 
+                  src="https://livecounts.io/embed/tiktok-live-follower-counter/kitto.tw" 
+                  style={{border: 0, width: '300px', height: '80px'}}
+                  title="TikTok Live Follower Counter - Taiwan"
+                />
+              </div>
+
+              {/* 베트남 */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <span className="text-2xl">🇻🇳</span> [베트남]
+                </h3>
+                <iframe 
+                  height="80px" 
+                  width="300px" 
+                  frameBorder="0" 
+                  src="https://livecounts.io/embed/tiktok-live-follower-counter/kitto.today.vn" 
+                  style={{border: 0, width: '300px', height: '80px'}}
+                  title="TikTok Live Follower Counter - Vietnam"
+                />
+              </div>
+
+              {/* 인도네시아 */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <span className="text-2xl">🇮🇩</span> [인도네시아]
+                </h3>
+                <iframe 
+                  height="80px" 
+                  width="300px" 
+                  frameBorder="0" 
+                  src="https://livecounts.io/embed/tiktok-live-follower-counter/kitto.idn" 
+                  style={{border: 0, width: '300px', height: '80px'}}
+                  title="TikTok Live Follower Counter - Indonesia"
+                />
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
         <div className="container mx-auto px-4 py-8 sm:py-12">
           <h1 className="text-3xl sm:text-5xl font-extrabold text-center mb-4 text-blue-700 flex items-center justify-center gap-2 sm:gap-3 drop-shadow leading-tight">
             <span>🌸</span> 推しの平成ネーム <span>✨</span>
