@@ -58,18 +58,18 @@ export default function Home() {
                 />
               </div>
 
-              {/* 베트남 */}
+              {/* 미국 */}
               <div className="flex flex-col items-center">
                 <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
-                  <span className="text-2xl">🇻🇳</span> [베트남]
+                  <span className="text-2xl">🇺🇸</span> [미국]
                 </h3>
                 <iframe 
                   height="80px" 
                   width="300px" 
                   frameBorder="0" 
-                  src="https://livecounts.io/embed/tiktok-live-follower-counter/kitto.today.vn" 
+                  src="https://livecounts.io/embed/tiktok-live-follower-counter/kitto.magazine" 
                   style={{border: 0, width: '300px', height: '80px'}}
-                  title="TikTok Live Follower Counter - Vietnam"
+                  title="TikTok Live Follower Counter - USA"
                 />
               </div>
 
